@@ -6,7 +6,8 @@ inputs:
     required: true
   region:
     description: The AWS region where the S3 bucket is located
-    required: true
+    required: false
+    default: 'us-east-1'
   source-dir:
     description: The directory containing the website files to deploy
     required: false
