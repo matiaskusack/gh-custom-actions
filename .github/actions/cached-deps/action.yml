@@ -5,6 +5,10 @@ inputs:
     description: Whether to cache dependencies
     required: false
     default: 'true'
+outputs:
+  cache-hit:
+    description: Whether the cache was hit
+    value: ${{ steps.cache.outputs.cache-hit }}
 runs:
   using: "composite"
   steps:
