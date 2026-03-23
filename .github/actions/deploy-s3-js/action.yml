@@ -1,0 +1,16 @@
+name: Deploy to S3
+description: Deploy a website to an S3 bucket
+inputs:
+  bucket-name:
+    description: The name of the S3 bucket to deploy to
+    required: true
+  region:
+    description: The AWS region where the S3 bucket is located
+    required: true
+  source-dir:
+    description: The directory containing the website files to deploy
+    required: false
+    default: 'dist'
+runs:
+  using: "node12"
+  main: "main.js"
