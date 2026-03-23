@@ -15,6 +15,8 @@ function run(){
     const s3Uri = `s3://${bucket}`;
     // exec.exec(`aws s3 sync ${sourceDir} ${s3Uri} --region ${region}`);
     core.notice(`Upload complete to ${s3Uri}!`);
+
+    core.setOutput('url', `https://${bucket}.s3.${region}.amazonaws.com/`);
 }
 
 run();
