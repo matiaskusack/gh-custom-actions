@@ -1,6 +1,8 @@
-name: Deploy to S3
-description: Deploy a website to an S3 bucket
+name: Upload my site to S3 using a dockerized pyhon script
+description: This action uploads files to an S3 bucket using a dockerized python script.
+
 inputs:
+
   bucket-name:
     description: The name of the S3 bucket to deploy to
     required: true
@@ -15,6 +17,9 @@ inputs:
 outputs:
   website-url:
     description: The URL of the deployed website.
+
 runs:
-  using: "node12"
-  main: "main.js"
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.bucket-name }}
